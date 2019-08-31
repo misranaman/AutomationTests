@@ -19,8 +19,7 @@ public class TestUtil extends TestBase {
 
 	public static long Page_Load_TimeOut = 30;
 	public static long Implicit_Wait = 20;
-	public static String Test_Data_Sheet_Path = "E:\\Oxygen_WorkSpace\\FreeCRMTest\\src\\main\\java"
-			+ "\\com\\crm\\qa\\testdata\\FreeCRMTestData.xlsx";
+	public static String Test_Data_Sheet_Path = "D:\\Eclipse Workspace\\AutomationTests\\src\\main\\java\\com\\crm\\qa\\testdata\\FreeCRMTestData.xlsx";
 
 	static Workbook book;
 	static Sheet sheet;
@@ -59,7 +58,7 @@ public class TestUtil extends TestBase {
 
 		for (int i = 0; i < sheet.getLastRowNum(); i++) {
 			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
-				data[i][k] = sheet.getRow(i+1).getCell(k).toString();
+				data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
 				System.out.println(data[i][k]);
 			}
 		}
@@ -67,11 +66,10 @@ public class TestUtil extends TestBase {
 		return data;
 
 	}
-	
-	public static void takeScreenShotAtEndOfTest() throws IOException
-	{
-		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String currDir=System.getProperty("user.dir");
-		FileHandler.copy(src, new File(currDir+"/ScreenShot/"+System.currentTimeMillis()+".png"));
+
+	public static void takeScreenShotAtEndOfTest() throws IOException {
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String currDir = System.getProperty("user.dir");
+		FileHandler.copy(src, new File(currDir + "/ScreenShot/" + System.currentTimeMillis() + ".png"));
 	}
 }

@@ -25,7 +25,7 @@ public class TestBase {
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(
-					"E:\\Oxygen_WorkSpace\\FreeCRMTest\\src\\main\\java\\com\\crm\\qa\\config\\config.properties");
+					"D:\\Eclipse Workspace\\AutomationTests\\src\\main\\java\\com\\crm\\qa\\config\\config.properties");
 			prop.load(ip);
 		}
 

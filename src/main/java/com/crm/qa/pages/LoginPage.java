@@ -24,23 +24,21 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath = "//img[contains(@alt,'free crm logo')]")
 	WebElement crmLogo;
 
-	//Intitializing Objects
+	// Intitializing Objects
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
 
-	//Actions
+	// Actions
 	public String validatePageTitle() {
 		return (driver.getTitle());
 	}
-	
-	public boolean valdiateCRMImage()
-	{
-		return(crmLogo.isDisplayed());
+
+	public boolean valdiateCRMImage() {
+		return (crmLogo.isDisplayed());
 	}
-	
-	public HomePage login(String un, String pwd) 
-	{
+
+	public HomePage login(String un, String pwd) {
 		try {
 			Thread.sleep(4000L);
 		} catch (InterruptedException e) {
@@ -48,9 +46,9 @@ public class LoginPage extends TestBase {
 			e.printStackTrace();
 		}
 		userName.sendKeys(un);
-		
+
 		passWord.sendKeys(pwd);
-	
+
 		loginButton.click();
 
 		return new HomePage();
